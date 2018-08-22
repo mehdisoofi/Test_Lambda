@@ -14,19 +14,33 @@ class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewSeekBar.setOnSeekBarChangeListener (object: SeekBar.OnSeekBarChangeListener
+        // setOnSeekBarChangeListener with java style
+       /* viewSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener
         {
-            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean)
+            {
 
             }
 
-            override fun onStartTrackingTouch(p0: SeekBar?) {
+            override fun onStartTrackingTouch(p0: SeekBar?)
+            {
 
             }
 
-            override fun onStopTrackingTouch(p0: SeekBar?) {
+            override fun onStopTrackingTouch(p0: SeekBar?)
+            {
 
             }
+        })*/
+
+
+        // setOnSeekBarChangeListener with lambda style
+        viewSeekBar.onSeekBarChangeListener(onProgressChanged = { seekBar, value, p2 ->
+
+        }, onStartTrackingTouch = { seekBar ->
+
+        }, onStopTrackingTouch = { seekBar ->
+
         })
     }
 }
